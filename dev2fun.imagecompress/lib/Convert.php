@@ -767,12 +767,12 @@ class Convert
 //                    $arFiles = $matchInlineImages[1];
 //                }
 
-                \preg_match_all('/([^"\'=\s]+\.(?:jpe?g|png))/mi', $content, $matchInlineImages);
+                \preg_match_all('/([^";\'=\s]+\.(?:jpe?g|png))/mi', $content, $matchInlineImages);
                 if(!empty($matchInlineImages[1])) {
                     $arFiles = $matchInlineImages[1];
                 }
 
-                \preg_match_all('/url\(([^"\'=\s]+\.(?:jpe?g|png))\)/mi', $content, $matchInlineImages);
+                \preg_match_all('/url\(([^";\'=\s]+\.(?:jpe?g|png))\)/mi', $content, $matchInlineImages);
                 if(!empty($matchInlineImages[1])) {
                     $arFiles = \array_merge(
                         $arFiles,
