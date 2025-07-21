@@ -11,7 +11,7 @@ defined('B_PROLOG_INCLUDED') and (B_PROLOG_INCLUDED === true) or die();
  * User: darkfriend <hi@darkfriend.ru>
  * Date: 04.05.2017
  */
-$MESS["D2F_MODULE_NAME_IMAGECOMPRESS"] = "Оптимизация картинок";
+$MESS["D2F_MODULE_NAME_IMAGECOMPRESS"] = "Оптимизация картинок Битрикс";
 $MESS["D2F_MODULE_DESCRIPTION_IMAGECOMPRESS"] = "Данный модуль оптимизирует картинки для веб.";
 $MESS["D2F_IMAGECOMPRESS_INSTALL_SUCCESS"] = 'Модуль успешно установлен';
 $MESS["D2F_IMAGECOMPRESS_UNINSTALL_SUCCESS"] = 'Модуль успешно удален из системы';
