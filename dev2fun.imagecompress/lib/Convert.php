@@ -1130,6 +1130,19 @@ class Convert
     }
 
     /**
+     * Проверка поддержки Webp в Safari
+     * @param string $curBrowserAgent
+     * @return bool
+     */
+    public static function checkSafariSupport(string $curBrowserAgent): bool
+    {
+        $isSafari = str_contains($curBrowserAgent, 'Safari') && !str_contains($curBrowserAgent, 'Chrome');
+        $isSafariWithWebp = preg_match('/Version\/(\d+)/', $curBrowserAgent, $matches) && $matches[1] >= 14;
+
+        return $isSafari && $isSafariWithWebp;
+    }
+
+    /**
      * Check current path on support webp
      * @return bool
      */
@@ -1176,7 +1189,7 @@ class Convert
         }
 
         $result = \in_array(self::getBrowserAgentName($curBrowserAgent), $supportBrowsers)
-            || self::checkSupportWebpAccept();
+            || self::checkSupportWebpAccept() || self::checkSafariSupport($curBrowserAgent);
 
         $event = new \Bitrix\Main\Event(self::getInstance()->MODULE_ID, "OnAfterCheckWebpSupport", [$result]);
         $event->send();
